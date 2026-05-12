@@ -11,6 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
+        /**
+         * CREATE TABLE developers(
+         *  id INT AUTO_INCREMENT,
+         *  name VARCHAR(100),
+         *  role VARCHAR(100),
+         *  email VARCHAR(100),
+         *  company VARCHAR(100),
+         *  experience INT,
+         *  PRIMARY_KEY(id)
+         * );
+         */
         Schema::create('developers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
