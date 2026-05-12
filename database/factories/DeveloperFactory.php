@@ -17,8 +17,13 @@ class DeveloperFactory extends Factory
      */
     public function definition(): array
     {
+        // Define your fake data here. fake()
         return [
-            //
+            'name' => fake()->name(),
+            'role' => fake()->jobTitle(),
+            'email' => fake()->companyEmail(),
+            'company' => fake()->company(),
+            'experience' => fake()->numberBetween(0, 30),
         ];
     }
 }
