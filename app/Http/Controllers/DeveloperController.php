@@ -12,4 +12,8 @@ class DeveloperController extends Controller
     public function showAll (){
         return view('developers.index');
     }
+
+    public function addNew (){
+        return view('developers.add');
+    }
 }
