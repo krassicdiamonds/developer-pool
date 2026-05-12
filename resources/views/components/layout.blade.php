@@ -7,7 +7,7 @@
 
     @vite('resources/css/app.css')
 </head>
-<body>
+<body class="bg-gray-50">
     {{-- header --}}
     <header class="top-0 sticky flex justify-between items-center bg-transparent px-40 py-8 border-gray-100 border-b-2">
         {{-- logo --}}
@@ -22,12 +22,12 @@
             <ul class="flex gap-x-10 text-sm">
                 {{-- show all devs --}}
                 <li>
-                    <a href="/">Show All</a>
+                    <a href="/" class="{{ request()->is('/') ? 'text-blue-500' :'text-gray-500' }}" >Show All</a>
                 </li>
 
                 {{-- add devs --}}
                 <li>
-                    <a href="/add">Add Developer</a>
+                    <a href="/add" class="{{ request()->is('add') ? 'text-blue-500' : 'text-gray-500' }}" >Add Developer</a>
                 </li>
                 
             </ul>
