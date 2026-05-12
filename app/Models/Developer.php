@@ -8,5 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Developer extends Model
 {
     /** @use HasFactory<\Database\Factories\DeveloperFactory> */
+
+    protected $fillable = ['name', 'email', 'role', 'company', 'experience'];
+
     use HasFactory;
 }
