@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Developer;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,7 @@ class DeveloperSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        // Initiate your factory here
+        Developer::factory()->count(20)->create();
     }
 }
