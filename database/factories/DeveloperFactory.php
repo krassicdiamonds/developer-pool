@@ -24,6 +24,7 @@ class DeveloperFactory extends Factory
             'email' => fake()->companyEmail(),
             'company' => fake()->company(),
             'experience' => fake()->numberBetween(0, 30),
+            'description' => fake()->realText(200),
         ];
     }
 }
