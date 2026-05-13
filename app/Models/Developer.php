@@ -9,7 +9,7 @@ class Developer extends Model
 {
     /** @use HasFactory<\Database\Factories\DeveloperFactory> */
 
-    protected $fillable = ['name', 'email', 'role', 'company', 'experience'];
+    protected $fillable = ['name', 'email', 'role', 'company', 'experience', 'description'];
 
     use HasFactory;
 }
