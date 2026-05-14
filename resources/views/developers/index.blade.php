@@ -8,7 +8,7 @@
     </div>
 
     {{-- Cards --}}
-    <div class="gap-2.5 grid grid-cols-2">
+    <div class="gap-2.5 grid grid-cols-2 my-5">
         
         @foreach ($developers as $developer)
         <div class="bg-white shadow-xs p-2.5 rounded-sm">
@@ -21,7 +21,7 @@
             <div class="py-2.5">
 
                 <button class="hover:bg-gray-400 px-2.5 border border-gray-500 hover:text-white text-sm transition-all duration-200">
-                    <a href="" >View Details</a>
+                    <a href="{{ route('developers.show', $developer->id) }}" >View Details</a>
                 </button>
 
             </div>

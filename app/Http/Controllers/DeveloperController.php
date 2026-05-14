@@ -17,6 +17,12 @@ class DeveloperController extends Controller
         return view('developers.index', ['developers' => $developers]);
     }
 
+    public function showDetails (string $id) {
+        $developer = Developer::findOrFail($id);
+
+        return view('developers.show', ['developer' => $developer]);
+    }
+
     public function addNew (){
         return view('developers.add');
     }
