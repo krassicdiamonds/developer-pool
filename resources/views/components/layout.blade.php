@@ -39,7 +39,7 @@
         </div>
     </header>
     {{-- main section: slot --}}
-    <main>
+    <main class="px-40">
         {{ $slot }}
     </main>
 </body>
