@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Developer;
 use Illuminate\Http\Request;
 
 class DeveloperController extends Controller
@@ -10,7 +11,10 @@ class DeveloperController extends Controller
 
     // show all. Path = ('/')
     public function showAll (){
-        return view('developers.index');
+        // get all developer records
+        $developers = Developer::all();
+
+        return view('developers.index', ['developers' => $developers]);
     }
 
     public function addNew (){
