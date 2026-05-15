@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Company;
 use App\Models\Developer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -23,7 +24,9 @@ class DeveloperFactory extends Factory
             'role' => fake()->jobTitle(),
             'email' => fake()->companyEmail(),
             'experience' => fake()->numberBetween(0, 30),
-            'description' => fake()->realText(200),
+            'description' => fake()->paragraph(5),
+            // ForeignId Rel
+            'company_id' => Company::inRandomOrder()->first()->id,
         ];
     }
 }

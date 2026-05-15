@@ -29,6 +29,8 @@ return new class extends Migration
             $table->string('email');
             $table->integer('experience');
             $table->longText('description');
+            // Foreign Key
+            $table->foreignId('company_id');
             $table->timestamps();
         });
     }
