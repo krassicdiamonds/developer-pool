@@ -27,7 +27,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('role');
             $table->string('email');
-            $table->string('company');
             $table->integer('experience');
             $table->longText('description');
             $table->timestamps();

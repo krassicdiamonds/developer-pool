@@ -12,7 +12,7 @@
             <h3 class="mt-1.5 text-gray-800 text-sm"><span class="font-bold">Email:</span> {{$developer->email}}</h3>
             {{-- View Details --}}
 
-            <h3 class="text-gray-800 text-sm"><span class="font-bold">Company:</span> {{$developer->company}}</h3>
+            {{-- <h3 class="text-gray-800 text-sm"><span class="font-bold">Company:</span> {{$developer->company}}</h3> --}}
             {{-- View Details --}}
             
             <h3 class="text-gray-800 text-sm"><span class="font-bold">Work Experience:</span> {{$developer->experience}} years</h3>
