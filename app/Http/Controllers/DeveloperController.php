@@ -12,7 +12,7 @@ class DeveloperController extends Controller
     // show all. Path = ('/')
     public function showAll (){
         // get all developer records
-        $developers = Developer::all();
+        $developers = Developer::orderBy('created_at', 'desc')->paginate(4);
 
         return view('developers.index', ['developers' => $developers]);
     }

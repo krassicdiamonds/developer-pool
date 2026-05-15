@@ -30,5 +30,6 @@
         
     </div>
         
+    {{ $developers->links() }}
 
 </x-layout>
