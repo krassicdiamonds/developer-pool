@@ -23,6 +23,9 @@ return new class extends Migration
          * );
          */
         Schema::create('developers', function (Blueprint $table) {
+            // $table = instance
+            // ->string, integer, foreignId, ... = data type
+            // ('....') => column name
             $table->id();
             $table->string('name');
             $table->string('role');
@@ -30,7 +33,7 @@ return new class extends Migration
             $table->integer('experience');
             $table->longText('description');
             // Foreign Key
-            $table->foreignId('company_id');
+            $table->foreignId('company_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
