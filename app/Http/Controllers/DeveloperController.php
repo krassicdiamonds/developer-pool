@@ -48,4 +48,10 @@ class DeveloperController extends Controller
 
         return redirect()->route('developers.index');
     }
+
+    public function destroy($id){
+        Developer::delete($id);
+
+        return redirect()->route('developers.index');
+    }
 }
