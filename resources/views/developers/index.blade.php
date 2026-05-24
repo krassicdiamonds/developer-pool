@@ -18,13 +18,22 @@
             <h3 class="text-gray-500 text-xs">{{$developer->role}}</h3>
             {{-- View Details --}}
 
-            <div class="py-2.5">
+            <div class="flex justify-between items-center py-2.5">
 
-                <button class="hover:bg-gray-400 px-2.5 border border-gray-500 hover:text-white text-sm transition-all duration-200">
+                <button class="hover:bg-gray-400 px-5 py-1.5 border border-gray-500 rounded-sm hover:text-white text-sm transition-all duration-200 cursor-pointer">
                     <a href="{{ route('developers.show', $developer->id) }}" >View Details</a>
                 </button>
 
+                   
+            <form 
+            action="{{ route('developers.destroy', $developer->id)}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <input type="submit" value="delete" class="bg-red-500 hover:bg-red-400 px-5 py-1.5 rounded-sm text-white text-sm uppercase transition-all duration-200 cursor-pointer">
+            </form>
+
             </div>
+
         </div>
         @endforeach
         

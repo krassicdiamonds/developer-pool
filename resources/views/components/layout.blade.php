@@ -8,6 +8,11 @@
     @vite('resources/css/app.css')
 </head>
 <body class="bg-gray-50">
+    @if(session('success'))
+        <div class="bg-green-50 p-5 text-green-500 text-sm text-center">
+            {{ session('success') }}
+        </div>
+    @endif
     {{-- header --}}
     <header class="top-0 sticky flex justify-between items-center bg-transparent backdrop-blur-2xl px-40 py-8 border-gray-100 border-b-2">
         {{-- logo --}}

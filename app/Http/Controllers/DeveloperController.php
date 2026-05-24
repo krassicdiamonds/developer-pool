@@ -46,12 +46,14 @@ class DeveloperController extends Controller
 
         Developer::create($validatedData);
 
-        return redirect()->route('developers.index');
+        return redirect()->route('developers.index')->with('success', 'Developer Created!');
     }
 
-    public function destroy($id){
-        Developer::delete($id);
+    public function destroy(string $id){
+        $developer = Developer::findOrFail($id);
 
-        return redirect()->route('developers.index');
+        $developer->delete();
+
+        return redirect()->route('developers.index')->with('success', 'Developer deleted!');
     }
 }

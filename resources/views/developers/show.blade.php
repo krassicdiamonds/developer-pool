@@ -34,7 +34,7 @@
         <div class="bg-gray-50 px-2.5 py-1.5 rounded-xs">
             <p class="text-gray-800 text-sm">{{$developer->description}}</p>
         </div>
-
+        
         <button class="right-40 bottom-20 absolute hover:bg-gray-400 px-2.5 border border-gray-500 rounded-sm w-fit hover:text-white text-sm transition-all duration-200 cursor-pointer">
             <a href="{{ route('developers.index') }}">Back</a>
         </button>
