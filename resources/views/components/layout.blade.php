@@ -24,7 +24,7 @@
 
         {{-- nav --}}
         <nav>
-            <ul class="flex gap-x-10 text-sm">
+            <ul class="flex items-center gap-x-10 text-sm">
                 {{-- show all devs --}}
                 <li>
                     <a href="{{ route('developers.index') }}" class="{{ request()->is('/') ? 'text-blue-500' :'text-gray-500' }}" >Show All</a>
@@ -34,6 +34,22 @@
                 <li>
                     <a href="{{ route('developers.add') }}" class="{{ request()->is('add') ? 'text-blue-500' : 'text-gray-500' }}" >Add Developer</a>
                 </li>
+                
+                {{-- register --}}
+                <li>
+                    <a href="{{ route('show.register') }}" class="{{ request()->is('register') ? 'text-blue-500' : 'text-gray-500' }} bg-gray-100 px-2.5 py-1 rounded-sm" >Register</a>
+                </li>
+
+                {{-- login --}}
+                <li>
+                    <a href="{{ route('show.login') }}" class="{{ request()->is('login') ? 'text-blue-500' : 'text-gray-500' }} bg-gray-100 px-2.5 py-1 rounded-sm" >Login</a>
+                </li>
+
+                {{-- logout --}}
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="hover:bg-gray-400 px-5 py-1.5 border border-gray-500 rounded-sm hover:text-white text-sm transition-all duration-200 cursor-pointer">Logout</button>
+                </form>
                 
             </ul>
         </nav>
