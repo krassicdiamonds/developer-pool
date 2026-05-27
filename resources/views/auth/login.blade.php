@@ -14,5 +14,12 @@
         <input type="submit" value="Login" class="block bg-gray-200 mx-auto my-2.5 px-5 py-1.5 rounded cursor-pointer">
 
         {{-- validation errors --}}
+        @if($errors->any())
+            <ul class="bg-red-100 px-2.5 py-1.5">
+                @foreach ($errors->all() as $error)
+                    <li class="text-red-500 text-sm">{{$error}}</li>
+                @endforeach
+            </ul>
+        @endif
     </form>
 </x-layout>

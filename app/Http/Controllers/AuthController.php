@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
@@ -40,9 +41,24 @@ class AuthController extends Controller
         return redirect()->route('developers.index');
     }
 
-    public function login()
+    public function login(Request $request)
     {
+        $validatedData = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|string'
+        ]);
 
+        if(Auth::attempt($validatedData)){
+            // regenerate session on request
+            $request->session()->regenerate();
+
+            // redirect user
+            return redirect()->route('developers.index');
+        }
+
+        // throw errors if credentials are incorrect
+
+        throw ValidationException::withMessages(['error' => 'Invalid credentials, try again']);
     }
 
     public function logout(Request $request)
